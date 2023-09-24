@@ -7,18 +7,10 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "webpack",
 		"watch": "webpack --watch",
+		"rincewind-devDeps": "npm install css-loader css-minimizer-webpack-plugin html-webpack-plugin mini-css-extract-plugin style-loader webpack webpack-cli --save-dev",
 		"gh-deploy": "git push origin :gh-pages && git subtree push --prefix dist origin gh-pages",
 		"gh-deploy-init": "git push origin && git subtree push --prefix dist origin gh-pages"
 	},
 	"author": "Walker Marlatt",
-	"license": "ISC",
-	"devDependencies": {
-		"css-loader": "^6.8.1",
-		"css-minimizer-webpack-plugin": "^5.0.1",
-		"html-webpack-plugin": "^5.5.3",
-		"mini-css-extract-plugin": "^2.7.6",
-		"style-loader": "^3.3.3",
-		"webpack": "^5.88.2",
-		"webpack-cli": "^5.1.4"
-	}
+	"license": "ISC"
 }
