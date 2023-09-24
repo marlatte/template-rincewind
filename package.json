@@ -1,0 +1,15 @@
+{
+	"name": "template-rincewind",
+	"version": "1.0.0",
+	"description": "template JSON",
+	"private": true,
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "webpack",
+		"watch": "webpack --watch",
+		"gh-deploy": "git push origin :gh-pages && git subtree push --prefix dist origin gh-pages",
+		"gh-deploy-init": "git push origin && git subtree push --prefix dist origin gh-pages"
+	},
+	"author": "Walker Marlatt",
+	"license": "ISC"
+}
