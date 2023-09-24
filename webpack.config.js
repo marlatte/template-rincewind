@@ -1,6 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+
 const devMode = true;
 
 module.exports = {
@@ -8,13 +10,12 @@ module.exports = {
 	devtool: devMode ? "inline-source-map" : "source-map",
 	entry: { index: "./src/index.js" },
 	output: {
-		filename: "[name].bundle.js",
+		filename: devMode ? "[name].bundle.js" : "main.js",
 		path: path.resolve(__dirname, "dist"),
 		clean: true,
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: "Template Title", // <--- Rename!
 			template: "./src/index.html",
 		}),
 	].concat(devMode ? [] : [new MiniCssExtractPlugin()]),
@@ -28,5 +29,8 @@ module.exports = {
 				],
 			},
 		],
+	},
+	optimization: {
+		minimizer: [new CssMinimizerPlugin()],
 	},
 };
